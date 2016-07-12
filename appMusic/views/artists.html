@@ -1,0 +1,34 @@
+<section class="catalog container" ng-controller="artistsController">
+  <div class="row">
+    <h4 class="title-gallery center black-text">GALERÍA DE ARTISTAS</h4>
+  </div>
+
+  <div class="row">
+    <a class="btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Catálogo Completo" ng-click="myFilter={decade:''}">TODOS</a>
+    <a class="btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Década de 1960" ng-click="myFilter={decade: '1960'}">1960</a>
+    <a class="btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Década de 1970" ng-click="myFilter={decade: '1970'}">1970</a>
+    <a class="btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Década de 1980" ng-click="myFilter={decade: '1980'}">1980</a>
+    <a class="btn-large tooltipped" data-position="top" data-delay="50" data-tooltip="Década de 1990" ng-click="myFilter={decade: '1990'}">1990</a>
+    <input class="input" type="text" name="nameArtist" ng-model="nameFilter" placeholder="Nombre Artista" />
+  </div>
+
+  <div class="row">
+    <div ng-repeat="artist in artists | filter: myFilter | filter: {name: nameFilter}" class="card-edit card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="img-card activator" ng-src="{{artist.image}}" height="300px" alt="{{artist.image}}">
+      </div>
+      <div class="card-content">
+        <p class="card-title activator grey-text text-darken-4">{{artist.name}}</p>
+        <p class="decada">Década: {{artist.decade}}</p>
+        <p>Songs: <p ng-repeat="songs in artist.songs">-{{songs}} </p><a class="info right" href="#/artists/single/{{artist.name}}">DETALLES</a></p>
+      </div>
+    </div>
+  </div>
+   
+</section>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+     $('.tooltipped').tooltip({delay: 50});
+  });
+</script>

@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  margin-bottom: 0;
+}
+
+.card-edit {
+  width: 31%;
+  display: inline-block;
+  margin: 2% 1% 5% 1%;
+  border-radius: 15px;
+}
+
+.img-card {
+  padding: 10px;
+}
+
+.info {
+	padding-bottom: 5%;
+}
+
+.catalog {
+	margin-top: 5%;
+}
+
+.decada {
+	font-size: 18px;
+	padding-bottom: 5%;
+}
+
+.card-edit-single {
+  width: 25%;
+  margin: 3% 37.5% 0 37.5%;
+  border-radius: 15px;
+}
+
+.info {
+  font-size: 18px;
+}
+
+.input {
+	width: 15%;
+}
+
+.img-header {
+  width: 100%;
+}
+
+.return {
+  padding-bottom: 5%;
+}

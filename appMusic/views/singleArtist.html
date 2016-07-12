@@ -1,0 +1,24 @@
+<section class="catalog" ng-controller="artistsController">
+  <div class="row">
+    <h4 class="title-gallery center black-text">DETALLES DEL ARTISTA</h4>
+  </div>
+
+  <div class="row" >
+    <div ng-repeat="artist in artists | filter: myFilter | filter: {name:name} | filter: {photo:photo}">
+      <header>
+        <img class="img-header" ng-src="{{artist.photo}}" />
+      </header>
+      <div class="card-edit-single card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="img-card activator" ng-src="{{artist.image}}" height="300px" alt="{{artist.image}}">
+        </div>
+        <div class="card-content">
+          <p class="card-title activator grey-text text-darken-4">{{artist.name}}</p>
+          <p class="decada">Década: {{artist.decade}}</p>
+          <p>Songs: <p ng-repeat="songs in artist.songs">-{{songs}}</p>
+          <p class="return"><a href="#/artist" class="info right">VOLVER AL CATÁLOGO</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
